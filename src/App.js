@@ -9,16 +9,17 @@ export default function App() {
   var [likeCounter, setCounter] = useState(0);
 
   function likeHandler() {
-    console.log("liked!", counter);
+    //console.log("liked!", counter);
     //counter++;
-    setCounter(likeCounter);
+    var newLikeCounter = likeCounter + 1;
+    setCounter(newLikeCounter);
   }
 
   return (
     <div className="App">
       <h1 style={{ backgroundColor: color }}>Hello {user}!!!</h1>
       {/* <h1 style ={{backgroundColor: "red"}}>Hello {username}!!!</h1> */}
-      <button onClick={likeHandler}> Like me! </button>
+      <button onClick={likeHandler}> Like me! </button> {likeCounter}
     </div>
   );
 }
