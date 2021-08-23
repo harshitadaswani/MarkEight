@@ -269,13 +269,13 @@ const flags = Object.keys(flagLib);
 
 export default function App() {
 
-  var [country, setCountry] = useState("Country name will appear here");
+  var [country, setCountry] = useState("Country name will appear here:");
 
   function inputHandler(e) {
       var input = e.target.value;
       country = flagLib[input];
       if (country === undefined) {
-        country = "This flag is not present in our database";
+        country = "This flag is not present in our database.";
       }
       setCountry(country);
     }
@@ -287,16 +287,16 @@ export default function App() {
   return (
     <div className="App">
     <h1>FlagoPedia</h1>
-    <h2>Enter any flag or choose any flag below to know country name</h2>
+    <h2>Enter any flag or choose any flag below to know country name:</h2>
     <input onChange= {inputHandler} type = "text" placeholder="Enter the flag here to know the country"/>
     <h3>{country}</h3>
-        {
+        <div class="flag-display">{
           flags.map((flag) => (
             <span onClick={() => clickHandler(flag)}>
               {" "}{flag}{" "}
             </span>
           ))
-        }
+        }</div>
     </div>
   );
 }
