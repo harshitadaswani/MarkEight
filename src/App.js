@@ -291,24 +291,12 @@ export default function App() {
     <input onChange= {inputHandler} type = "text" placeholder="Enter the flag here to know the country"/>
     <h3>{country}</h3>
         {
-        flags.map((flag) => (
-          <span onClick={() => clickHandler(flag)}>
-            {" "}
-            {flag}{" "}
-          </span>
-        ))
-          }
-        {/* {flags.map((flag) => {
-          return (
-            <li
-              onClick={() => clickHandler(flag)}
-              className="list-item"
-              key={flag} style={{cursor: "pointer"}}
-            >
+          flags.map((flag) => (
+            <span onClick={() => clickHandler(flag)}>
               {" "}{flag}{" "}
-            </li>
-          );
-        })} */}
+            </span>
+          ))
+        }
     </div>
   );
 }
