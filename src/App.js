@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./styles.css";
 
 export default function App() {
-  var user = "Harshita";
-  var color = "blue";
-  //var username = prompt("Enter your name");
-  //var counter =0;
-  var [likeCounter, setCounter] = useState(0);
 
-  function likeHandler() {
-    //console.log("liked!", counter);
-    //counter++;
-    var newLikeCounter = likeCounter + 1;
-    setCounter(newLikeCounter);
-  }
+  var [input, setInput] = useState("");
+    
+    function inputHandler(e) {
+      //console.log(e.target.value);
+      setInput(e.target.value);
+    }
 
   return (
     <div className="App">
-      <h1 style={{ backgroundColor: color }}>Hello {user}!!!</h1>
-      {/* <h1 style ={{backgroundColor: "red"}}>Hello {username}!!!</h1> */}
-      <button onClick={likeHandler}> Like me! </button> {likeCounter}
+    <h1>Enter your name: </h1>
+    <input onChange= {inputHandler} type = "text" />
+    <h3> Text entered will appear here: </h3>
+    <div>{input} </div>
     </div>
   );
 }
