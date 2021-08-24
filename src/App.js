@@ -281,7 +281,7 @@ export default function App() {
     }
 
   function clickHandler(flag){
-    setCountry(flagLib[flag])
+    setCountry(flagLib[flag]);
   }
 
   return (
